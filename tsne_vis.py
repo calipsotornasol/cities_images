@@ -7,12 +7,7 @@ from PIL import Image
 from lapjv import lapjv
 from sklearn.manifold import TSNE
 from scipy.spatial.distance import cdist
-from tensorflow.python.keras.applications.vgg16 import VGG16
-from keras.applications.vgg16 import preprocess_input
 from tensorflow.python.keras.preprocessing import image
-from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.python.keras.models import Model, Sequential
-from tensorflow.python.keras.layers import Flatten
 import pickle
 
 parser = argparse.ArgumentParser()
@@ -61,7 +56,6 @@ def generate_tsne(activations):
     X_2d = tsne.fit_transform(np.array(activations)[0:to_plot,:])
     X_2d -= X_2d.min(axis=0)
     X_2d /= X_2d.max(axis=0)
-    print(X_2d.shape)
     return X_2d
     
 def save_tsne_grid(img_collection, X_2d, out_res, out_dim):
