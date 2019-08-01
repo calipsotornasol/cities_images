@@ -4,6 +4,6 @@ This is a python script for features extraction and t-SNE visualization of multi
 
 ## 
 
-Cnn extracting features code is based on the repository
+Cnn extracting features code is based on the repository https://github.com/jorisguerin/pretrainedCNN_clustering
 
 t-sne code is based on the repository https://github.com/prabodhhere/tsne-grid
